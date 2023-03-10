@@ -86,4 +86,10 @@ public class World {
 			entitySystem.internalUpdate();
 		}
 	}
+
+	public void dispose() {
+		for (EntitySystem entitySystem : entitySystems) {
+			entitySystem.internalDispose();
+		}
+	}
 }

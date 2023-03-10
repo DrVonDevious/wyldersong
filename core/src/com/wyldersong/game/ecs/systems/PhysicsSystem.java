@@ -19,17 +19,15 @@ public class PhysicsSystem extends EntitySystem {
 
 		position.x += velocity.dx;
 		position.y += velocity.dy;
+		position.z += velocity.dz;
 
-		if (velocity.dx > 0) {
-			velocity.dx -= 0.1f;
-		} else if (velocity.dx < 0) {
-			velocity.dx += 0.1f;
-		}
+		velocity.dx = 0;
+		velocity.dy = 0;
+		velocity.dz = 0;
+	}
 
-		if (velocity.dy > 0) {
-			velocity.dy -= 0.1f;
-		} else if (velocity.dy < 0) {
-			velocity.dy += 0.1f;
-		}
+	@Override
+	public void dispose(Entity entity) {
+		// Nothing to dispose of
 	}
 }
